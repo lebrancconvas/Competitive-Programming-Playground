@@ -44,3 +44,16 @@ abacaba
 68  
 0  
 74  
+
+## Limit 
+### Time Limit per test. 
+1 second 
+
+### Memory Limit per test. 
+256 megabytes 
+
+### Input 
+Standard Input 
+
+### Output 
+Standard Output 
