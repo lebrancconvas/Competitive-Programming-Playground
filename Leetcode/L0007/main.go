@@ -14,6 +14,10 @@ import (
 func reverse(x int) int {
 	var isNegative bool = false; 
 
+	if x == 0 {
+		return 0; 
+	}
+
 	if x < 0 {
 		x = -1 * x; 
 		isNegative = true; 
@@ -40,6 +44,10 @@ func reverse(x int) int {
 	if isNegative {
 		reverseInt = -1 * reverseInt; 
 	}
+
+	if reverseInt > 2147483647 || reverseInt < -2147483648 {
+		return 0; 
+	} 
 
 	return reverseInt;   
 }
