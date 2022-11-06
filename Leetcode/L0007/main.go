@@ -5,11 +5,50 @@
 package L0007
 
 import (
-
+	_"math" 
+	"strconv"
 )
 
 // Solution Code. 
-func reverse(x int32) int32 {
 
-	return 0;  
+func reverse(x int) int {
+	var isNegative bool = false; 
+
+	if x < 0 {
+		x = -1 * x; 
+		isNegative = true; 
+	}
+	lengthX := digitCount(x); 
+	modArray := make([]int, lengthX); 	
+	var reverseString string;
+
+	for x != 0 {
+		modArray = append(modArray, x % 10);
+		x = x / 10; 
+	}
+
+	for _, v := range modArray {
+		s := strconv.Itoa(v);
+		reverseString += s; 
+	}
+
+	reverseInt, err := strconv.Atoi(reverseString); 
+	if err != nil {
+		panic(err); 
+	} 
+
+	if isNegative {
+		reverseInt = -1 * reverseInt; 
+	}
+
+	return reverseInt;   
+}
+
+func digitCount(x int) int { 
+	count := 0; 
+	for x != 0 {
+		x = x / 10; 
+		count++; 
+	}
+	return count; 
 }
