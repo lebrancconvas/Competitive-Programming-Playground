@@ -8,4 +8,7 @@ n:
 r:
 	sh run.sh $(pb)
 
-.PHONY: n r
+t:
+	sh test.sh $(pb)
+
+.PHONY: n r t 
